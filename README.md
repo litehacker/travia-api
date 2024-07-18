@@ -1,10 +1,12 @@
 # travia-api
 
+> Disclaimer: This is not official package supported by Travia.
+
 npm package for Travia.is booking system. Personally I had hard time reading and implementing all the api's that I would use in order to consume Travia's API, so I decided to generate the client, something that we got use with prisma. for example we can use it as `travia.booking.create(...)` and similar. Instead of creating endpoints that will make the request, it seems efficient to interact with Types and know what is redurned especially if we have an access to their open api swagger file with descriptions and requirements.
 
 ## Changes
 
-In the npm package we did change api a bit by making the `travelAgentId` set in the environment variable as , so we don't pass always the same param if we develop for only one client. That's a major difference. So this simplicity brings the restriction.
+In the npm package we did change api a bit by making the `travelAgentId` set in the client object declaration while initial setup, so we don't pass always the same param if we develop for only one client. That's a major difference. So this simplicity brings the restriction; meaning that we can consume one travel agent with each object that has the all methods.
 
 ## Setup
 
