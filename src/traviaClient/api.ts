@@ -81,7 +81,7 @@ export const CancelABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     cancelTravelAgentBookingCartUsingPUT: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options: RawAxiosRequestConfig = {}
@@ -152,7 +152,7 @@ export const CancelABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     cancelTravelAgentBookingUsingPUT: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       message?: string,
@@ -231,7 +231,7 @@ export const CancelABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     deleteTravelAgentBookingRoomUsingDELETE: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingId: number,
       id: number,
       fieldsToInclude?: string,
@@ -310,7 +310,7 @@ export const CancelABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingCancellationFeeUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomId?: number,
       fieldsToInclude?: string,
@@ -400,7 +400,7 @@ export const CancelABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async cancelTravelAgentBookingCartUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: RawAxiosRequestConfig
@@ -441,7 +441,7 @@ export const CancelABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async cancelTravelAgentBookingUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       message?: string,
@@ -484,7 +484,7 @@ export const CancelABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async deleteTravelAgentBookingRoomUsingDELETE(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingId: number,
       id: number,
       fieldsToInclude?: string,
@@ -527,7 +527,7 @@ export const CancelABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async getTravelAgentBookingCancellationFeeUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomId?: number,
       fieldsToInclude?: string,
@@ -583,7 +583,7 @@ export const CancelABookingApiFactory = function (
      * @throws {RequiredError}
      */
     cancelTravelAgentBookingCartUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: any
@@ -608,7 +608,7 @@ export const CancelABookingApiFactory = function (
      * @throws {RequiredError}
      */
     cancelTravelAgentBookingUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       message?: string,
@@ -635,7 +635,7 @@ export const CancelABookingApiFactory = function (
      * @throws {RequiredError}
      */
     deleteTravelAgentBookingRoomUsingDELETE(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingId: number,
       id: number,
       fieldsToInclude?: string,
@@ -662,7 +662,7 @@ export const CancelABookingApiFactory = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingCancellationFeeUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomId?: number,
       fieldsToInclude?: string,
@@ -705,7 +705,7 @@ export class CancelABookingApi extends BaseAPI {
   ) {
     return CancelABookingApiFp(this.configuration)
       .cancelTravelAgentBookingCartUsingPUT(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         fieldsToInclude,
         options
@@ -732,7 +732,7 @@ export class CancelABookingApi extends BaseAPI {
   ) {
     return CancelABookingApiFp(this.configuration)
       .cancelTravelAgentBookingUsingPUT(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         fieldsToInclude,
         message,
@@ -760,7 +760,7 @@ export class CancelABookingApi extends BaseAPI {
   ) {
     return CancelABookingApiFp(this.configuration)
       .deleteTravelAgentBookingRoomUsingDELETE(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         bookingId,
         id,
         fieldsToInclude,
@@ -788,7 +788,7 @@ export class CancelABookingApi extends BaseAPI {
   ) {
     return CancelABookingApiFp(this.configuration)
       .getTravelAgentBookingCancellationFeeUsingGET(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         bookingRoomId,
         fieldsToInclude,
@@ -815,7 +815,7 @@ export const GetABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingCartUsingGET2: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       fieldsToInclude?: string,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
@@ -823,7 +823,7 @@ export const GetABookingApiAxiosParamCreator = function (
       assertParamExists(
         "getTravelAgentBookingCartUsingGET2",
         "travelAgentId",
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID)
+        this.configuration.travelAgentId
       );
       const localVarPath =
         `/api/external/v2/travelAgents/{travelAgentId}/bookingCart`.replace(
@@ -887,7 +887,7 @@ export const GetABookingApiAxiosParamCreator = function (
       assertParamExists(
         "getTravelAgentBookingCartUsingGET3",
         "travelAgentId",
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID)
+        this.configuration.travelAgentId
       );
       // verify required parameter 'id' is not null or undefined
       assertParamExists("getTravelAgentBookingCartUsingGET3", "id", id);
@@ -948,7 +948,7 @@ export const GetABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options: RawAxiosRequestConfig = {}
@@ -1141,7 +1141,7 @@ export const GetABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async getTravelAgentBookingCartUsingGET2(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       fieldsToInclude?: string,
       options?: RawAxiosRequestConfig
     ): Promise<
@@ -1217,7 +1217,7 @@ export const GetABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async getTravelAgentBookingUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: RawAxiosRequestConfig
@@ -1334,7 +1334,7 @@ export const GetABookingApiFactory = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingCartUsingGET2(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       fieldsToInclude?: string,
       options?: any
     ): AxiosPromise<BookingCartResponse> {
@@ -1374,7 +1374,7 @@ export const GetABookingApiFactory = function (
      * @throws {RequiredError}
      */
     getTravelAgentBookingUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: any
@@ -1461,7 +1461,7 @@ export class GetABookingApi extends BaseAPI {
   ) {
     return GetABookingApiFp(this.configuration)
       .getTravelAgentBookingCartUsingGET2(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         fieldsToInclude,
         options
       )
@@ -1499,7 +1499,7 @@ export class GetABookingApi extends BaseAPI {
    * @memberof GetABookingApi
    */
   public getTravelAgentBookingUsingGET(
-    travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+    travelAgentId: number = this.configuration.travelAgentId,
     id: number,
     fieldsToInclude?: string,
     options?: RawAxiosRequestConfig
@@ -1584,7 +1584,7 @@ export const GetPropertyContentApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getPropertiesPageUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       page?: number,
       size?: number,
       fieldsToInclude?: string,
@@ -1659,7 +1659,7 @@ export const GetPropertyContentApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getPropertyUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options: RawAxiosRequestConfig = {}
@@ -1739,7 +1739,7 @@ export const GetPropertyContentApiFp = function (
      * @throws {RequiredError}
      */
     async getPropertiesPageUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       page?: number,
       size?: number,
       fieldsToInclude?: string,
@@ -1781,7 +1781,7 @@ export const GetPropertyContentApiFp = function (
      * @throws {RequiredError}
      */
     async getPropertyUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: RawAxiosRequestConfig
@@ -1836,7 +1836,7 @@ export const GetPropertyContentApiFactory = function (
      * @throws {RequiredError}
      */
     getPropertiesPageUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       page?: number,
       size?: number,
       fieldsToInclude?: string,
@@ -1862,7 +1862,7 @@ export const GetPropertyContentApiFactory = function (
      * @throws {RequiredError}
      */
     getPropertyUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       fieldsToInclude?: string,
       options?: any
@@ -1900,7 +1900,7 @@ export class GetPropertyContentApi extends BaseAPI {
   ) {
     return GetPropertyContentApiFp(this.configuration)
       .getPropertiesPageUsingGET(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         page,
         size,
         fieldsToInclude,
@@ -1926,7 +1926,7 @@ export class GetPropertyContentApi extends BaseAPI {
   ) {
     return GetPropertyContentApiFp(this.configuration)
       .getPropertyUsingGET(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         fieldsToInclude,
         options
@@ -2100,7 +2100,7 @@ export const MakeABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     addBookingRoomsToTravelAgentBookingUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomCreateRequest: BookingRoomCreateRequest,
       options: RawAxiosRequestConfig = {}
@@ -2183,7 +2183,7 @@ export const MakeABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     addBookingToTravelAgentBookingCartUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCreateRequest: BookingCreateRequest,
       createNewBookingCart?: boolean,
       options: RawAxiosRequestConfig = {}
@@ -2261,7 +2261,7 @@ export const MakeABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     addBookingsToTravelAgentBookingCartUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCartCreateRequest: BookingCartCreateRequest,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
@@ -2335,7 +2335,7 @@ export const MakeABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     confirmTravelAgentBookingCartUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingCartConfirmRequest?: BookingCartConfirmRequest,
       options: RawAxiosRequestConfig = {}
@@ -2419,7 +2419,7 @@ export const MakeABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async addBookingRoomsToTravelAgentBookingUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomCreateRequest: BookingRoomCreateRequest,
       options?: RawAxiosRequestConfig
@@ -2459,7 +2459,7 @@ export const MakeABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async addBookingToTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCreateRequest: BookingCreateRequest,
       createNewBookingCart?: boolean,
       options?: RawAxiosRequestConfig
@@ -2498,7 +2498,7 @@ export const MakeABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async addBookingsToTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCartCreateRequest: BookingCartCreateRequest,
       options?: RawAxiosRequestConfig
     ): Promise<
@@ -2536,7 +2536,7 @@ export const MakeABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async confirmTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingCartConfirmRequest?: BookingCartConfirmRequest,
       options?: RawAxiosRequestConfig
@@ -2590,7 +2590,7 @@ export const MakeABookingApiFactory = function (
      * @throws {RequiredError}
      */
     addBookingRoomsToTravelAgentBookingUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomCreateRequest: BookingRoomCreateRequest,
       options?: any
@@ -2614,7 +2614,7 @@ export const MakeABookingApiFactory = function (
      * @throws {RequiredError}
      */
     addBookingToTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCreateRequest: BookingCreateRequest,
       createNewBookingCart?: boolean,
       options?: any
@@ -2637,7 +2637,7 @@ export const MakeABookingApiFactory = function (
      * @throws {RequiredError}
      */
     addBookingsToTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       bookingCartCreateRequest: BookingCartCreateRequest,
       options?: any
     ): AxiosPromise<BookingCartResponse> {
@@ -2659,7 +2659,7 @@ export const MakeABookingApiFactory = function (
      * @throws {RequiredError}
      */
     confirmTravelAgentBookingCartUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingCartConfirmRequest?: BookingCartConfirmRequest,
       options?: any
@@ -2700,7 +2700,7 @@ export class MakeABookingApi extends BaseAPI {
   ) {
     return MakeABookingApiFp(this.configuration)
       .addBookingRoomsToTravelAgentBookingUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         bookingRoomCreateRequest,
         options
@@ -2725,7 +2725,7 @@ export class MakeABookingApi extends BaseAPI {
   ) {
     return MakeABookingApiFp(this.configuration)
       .addBookingToTravelAgentBookingCartUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         bookingCreateRequest,
         createNewBookingCart,
         options
@@ -2748,7 +2748,7 @@ export class MakeABookingApi extends BaseAPI {
   ) {
     return MakeABookingApiFp(this.configuration)
       .addBookingsToTravelAgentBookingCartUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         bookingCartCreateRequest,
         options
       )
@@ -2772,7 +2772,7 @@ export class MakeABookingApi extends BaseAPI {
   ) {
     return MakeABookingApiFp(this.configuration)
       .confirmTravelAgentBookingCartUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         bookingCartConfirmRequest,
         options
@@ -2797,7 +2797,7 @@ export const SearchAccommodationApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getFiltersUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'travelAgentId' is not null or undefined
@@ -2854,7 +2854,7 @@ export const SearchAccommodationApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     retrievePropertyAvailableDatesUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       propertyIds: string,
       start: string,
       end: string,
@@ -2942,7 +2942,7 @@ export const SearchAccommodationApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     searchPropertyRatesUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       request: PropertyRatesRequest,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
@@ -3091,7 +3091,7 @@ export const SearchAccommodationApiFp = function (
      * @throws {RequiredError}
      */
     async getFiltersUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options?: RawAxiosRequestConfig
     ): Promise<
       (
@@ -3128,7 +3128,7 @@ export const SearchAccommodationApiFp = function (
      * @throws {RequiredError}
      */
     async retrievePropertyAvailableDatesUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       propertyIds: string,
       start: string,
       end: string,
@@ -3169,7 +3169,7 @@ export const SearchAccommodationApiFp = function (
      * @throws {RequiredError}
      */
     async searchPropertyRatesUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       request: PropertyRatesRequest,
       options?: RawAxiosRequestConfig
     ): Promise<
@@ -3255,7 +3255,7 @@ export const SearchAccommodationApiFactory = function (
      * @throws {RequiredError}
      */
     getFiltersUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options?: any
     ): AxiosPromise<PropertySearchFiltersResponse> {
       return localVarFp
@@ -3273,7 +3273,7 @@ export const SearchAccommodationApiFactory = function (
      * @throws {RequiredError}
      */
     retrievePropertyAvailableDatesUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       propertyIds: string,
       start: string,
       end: string,
@@ -3298,7 +3298,7 @@ export const SearchAccommodationApiFactory = function (
      * @throws {RequiredError}
      */
     searchPropertyRatesUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       request: PropertyRatesRequest,
       options?: any
     ): AxiosPromise<PropertyRatesResponse> {
@@ -3342,7 +3342,7 @@ export class SearchAccommodationApi extends BaseAPI {
    * @memberof SearchAccommodationApi
    */
   public getFiltersUsingGET(
-    travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+    travelAgentId: number = this.configuration.travelAgentId,
     options?: RawAxiosRequestConfig
   ) {
     return SearchAccommodationApiFp(this.configuration)
@@ -3369,7 +3369,7 @@ export class SearchAccommodationApi extends BaseAPI {
   ) {
     return SearchAccommodationApiFp(this.configuration)
       .retrievePropertyAvailableDatesUsingGET(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         propertyIds,
         start,
         end,
@@ -3393,7 +3393,7 @@ export class SearchAccommodationApi extends BaseAPI {
   ) {
     return SearchAccommodationApiFp(this.configuration)
       .searchPropertyRatesUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         request,
         options
       )
@@ -3415,7 +3415,7 @@ export class SearchAccommodationApi extends BaseAPI {
   ) {
     return SearchAccommodationApiFp(this.configuration)
       .searchUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         propertySearchFilterRequest,
         options
       )
@@ -3439,7 +3439,7 @@ export const SearchCarRentalApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     getFiltersUsingGET: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
       // verify required parameter 'travelAgentId' is not null or undefined
@@ -3494,7 +3494,7 @@ export const SearchCarRentalApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     searchCarsUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       carRentalSearchRequest: CarRentalSearchRequest,
       options: RawAxiosRequestConfig = {}
     ): Promise<RequestArgs> => {
@@ -3573,7 +3573,7 @@ export const SearchCarRentalApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async getFiltersUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options?: RawAxiosRequestConfig
     ): Promise<
       (
@@ -3608,7 +3608,7 @@ export const SearchCarRentalApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async searchCarsUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       carRentalSearchRequest: CarRentalSearchRequest,
       options?: RawAxiosRequestConfig
     ): Promise<
@@ -3658,7 +3658,7 @@ export const SearchCarRentalApiFactory = function (
      * @throws {RequiredError}
      */
     getFiltersUsingGET(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       options?: any
     ): AxiosPromise<CarRentalSearchFiltersResponse> {
       return localVarFp
@@ -3674,7 +3674,7 @@ export const SearchCarRentalApiFactory = function (
      * @throws {RequiredError}
      */
     searchCarsUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       carRentalSearchRequest: CarRentalSearchRequest,
       options?: any
     ): AxiosPromise<CarRentalSearchResponse> {
@@ -3702,7 +3702,7 @@ export class SearchCarRentalApi extends BaseAPI {
    */
   public getFiltersUsingGET(options?: RawAxiosRequestConfig) {
     return SearchCarRentalApiFp(this.configuration)
-      .getFiltersUsingGET(Number(process.env.TRAVIA_TRAVEL_AGENT_ID), options)
+      .getFiltersUsingGET(this.configuration.travelAgentId, options)
       .then((request) => request(this.axios, this.basePath));
   }
 
@@ -3721,7 +3721,7 @@ export class SearchCarRentalApi extends BaseAPI {
   ) {
     return SearchCarRentalApiFp(this.configuration)
       .searchCarsUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         carRentalSearchRequest,
         options
       )
@@ -3747,7 +3747,7 @@ export const UpdateABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     updateTravelAgentBookingNameListUsingPOST: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomNameUpdateRequests: Array<BookingRoomNameUpdateRequest>,
       options: RawAxiosRequestConfig = {}
@@ -3826,7 +3826,7 @@ export const UpdateABookingApiAxiosParamCreator = function (
      * @throws {RequiredError}
      */
     updateTravelAgentBookingUsingPUT: async (
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingUpdateRequest: BookingUpdateRequest,
       options: RawAxiosRequestConfig = {}
@@ -3916,7 +3916,7 @@ export const UpdateABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async updateTravelAgentBookingNameListUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomNameUpdateRequests: Array<BookingRoomNameUpdateRequest>,
       options?: RawAxiosRequestConfig
@@ -3953,7 +3953,7 @@ export const UpdateABookingApiFp = function (configuration?: Configuration) {
      * @throws {RequiredError}
      */
     async updateTravelAgentBookingUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingUpdateRequest: BookingUpdateRequest,
       options?: RawAxiosRequestConfig
@@ -4007,7 +4007,7 @@ export const UpdateABookingApiFactory = function (
      * @throws {RequiredError}
      */
     updateTravelAgentBookingNameListUsingPOST(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingRoomNameUpdateRequests: Array<BookingRoomNameUpdateRequest>,
       options?: any
@@ -4031,7 +4031,7 @@ export const UpdateABookingApiFactory = function (
      * @throws {RequiredError}
      */
     updateTravelAgentBookingUsingPUT(
-      travelAgentId: number = Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+      travelAgentId: number = this.configuration.travelAgentId,
       id: number,
       bookingUpdateRequest: BookingUpdateRequest,
       options?: any
@@ -4072,7 +4072,7 @@ export class UpdateABookingApi extends BaseAPI {
   ) {
     return UpdateABookingApiFp(this.configuration)
       .updateTravelAgentBookingNameListUsingPOST(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         bookingRoomNameUpdateRequests,
         options
@@ -4097,7 +4097,7 @@ export class UpdateABookingApi extends BaseAPI {
   ) {
     return UpdateABookingApiFp(this.configuration)
       .updateTravelAgentBookingUsingPUT(
-        Number(process.env.TRAVIA_TRAVEL_AGENT_ID),
+        this.configuration.travelAgentId,
         id,
         bookingUpdateRequest,
         options
