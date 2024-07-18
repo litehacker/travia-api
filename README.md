@@ -8,34 +8,42 @@ In the npm package we did change api a bit by making the `travelAgentId` set in 
 
 ## Setup
 
-### .env
-
-```env
-  TRAVIA_BASE_URL=
-  TRAVIA_API_KEY=
-  TRAVIA_TRAVEL_AGENT_ID=
-```
-
-These you can obtain after your access is granted to their API.
-
 ### Initialization
 
-Initialization of the provider class which we call `travia`:
+Initialization of the provider class which we call `travia` but you can call whatever:
 
 ```js
-const apiConfig = new Configuration({
-  basePath: process.env.TRAVIA_BASE_URL,
-  apiKey: process.env.TRAVIA_API_KEY,
-});
+const envVariables = {
+  TRAVIA_BASE_URL: "PROVIDE_THE_URL",
+  TRAVIA_API_KEY: "SOME_KEY_HERE",
+  TRAVIA_TRAVEL_AGENT_ID: "123456789",
+};
+
+const travia = new TraviaClient(envVariables);
 ```
 
-But you don't have to do it. Just start consuming as:
+Just start consuming as:
 
 ```js
-const roomRatesResponse =
-  await travia.search.accomodation.searchPropertyRatesUsingPOST(
-    bookingRoomsPayload
-  );
+import { TraviaClient } from "travia-api";
+
+const envVariables = {
+  TRAVIA_BASE_URL: process.env.TRAVIA_BASE_URL,
+  TRAVIA_API_KEY: process.env.TRAVIA_API_KEY,
+  TRAVIA_TRAVEL_AGENT_ID: process.env.TRAVIA_TRAVEL_AGENT_ID,
+};
+
+const traviaClient = new TraviaClient(envVariables);
+// Step 2: Use the API methods
+// Example: Fetching property content
+traviaClient.content
+  .getPropertyUsingGET(123)
+  .then((content) => {
+    console.log("Property Content:", content);
+  })
+  .catch((error) => {
+    console.error("Error fetching property content:", error);
+  });
 ```
 
 ## Features
@@ -45,3 +53,7 @@ type safe, uses `axios`, has descriptions for the each method.
 - booking api
 - content api
 - search api
+
+## Consideration
+
+Ensure that you set the client object only once when your server is started and consume it globally.
